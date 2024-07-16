@@ -1,0 +1,22 @@
+uuid: 515462ee-9955-4871-9c97-d381205ff860
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.research_topics
+id: node.research_topics.status
+field_name: status
+entity_type: node
+bundle: research_topics
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

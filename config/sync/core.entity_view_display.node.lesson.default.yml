@@ -1,0 +1,67 @@
+uuid: 3dda0c74-b976-4327-8536-428246c77b50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lesson.body
+    - field.field.node.lesson.field_lecture_course
+    - field.field.node.lesson.field_lesson_access
+    - field.field.node.lesson.field_lesson_content
+    - field.field.node.lesson.field_lesson_time
+    - node.type.lesson
+  module:
+    - entity_reference_revisions
+    - options
+    - text
+    - user
+id: node.lesson.default
+targetEntityType: node
+bundle: lesson
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_lecture_course:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_lesson_access:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_lesson_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_lesson_time:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

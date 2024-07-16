@@ -1,0 +1,21 @@
+uuid: aa3f3290-56ca-4f54-8a23-dc9bd317c84a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.portfolio_tags
+  module:
+    - text
+id: taxonomy_term.portfolio_tags.description
+field_name: description
+entity_type: taxonomy_term
+bundle: portfolio_tags
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

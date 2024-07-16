@@ -1,0 +1,18 @@
+uuid: 976a8353-62c8-4c9a-9de2-d32f7238eca5
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category_course
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.category_course
+target_entity_type_id: taxonomy_term
+target_bundle: category_course
+default_langcode: site_default
+language_alterable: true

@@ -1,0 +1,68 @@
+uuid: 3e785def-7445-403c-b11b-b6160a992944
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.summary_posts.body
+    - field.field.node.summary_posts.field_axis_topic
+    - field.field.node.summary_posts.field_city
+    - field.field.node.summary_posts.field_email
+    - field.field.node.summary_posts.field_research_file
+    - field.field.node.summary_posts.field_research_topics
+    - field.field.node.summary_posts.field_researcher_name
+    - field.field.node.summary_posts.field_tel
+    - field.field.node.summary_posts.field_type_of_participation
+    - node.type.summary_posts
+  module:
+    - file
+    - text
+    - user
+id: node.summary_posts.teaser
+targetEntityType: node
+bundle: summary_posts
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_research_file:
+    type: file_url_plain
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_research_topics:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_researcher_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_axis_topic: true
+  field_city: true
+  field_email: true
+  field_tel: true
+  field_type_of_participation: true
+  langcode: true

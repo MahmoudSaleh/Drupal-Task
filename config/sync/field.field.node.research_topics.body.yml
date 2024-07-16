@@ -1,0 +1,24 @@
+uuid: 82fe64d3-f0ce-4893-9187-cf498e9c8474
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.research_topics
+  module:
+    - text
+id: node.research_topics.body
+field_name: body
+entity_type: node
+bundle: research_topics
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

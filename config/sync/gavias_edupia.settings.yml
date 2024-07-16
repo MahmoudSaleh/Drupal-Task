@@ -1,0 +1,26 @@
+features:
+  node_user_picture: 0
+  comment_user_picture: 0
+  comment_user_verification: 0
+  favicon: 1
+logo:
+  use_default: 0
+  path: 'public://Untitled-1-01_1.png'
+favicon:
+  use_default: 0
+  path: 'public://Untitled-1_150_0.png'
+  mimetype: image/png
+theme_skin: green
+enable_customize: '0'
+sticky_menu: '0'
+site_layout: wide
+preloader: '0'
+default_header: header
+footer_fixed: ''
+footer_first_size: '3'
+footer_second_size: '2'
+footer_third_size: '3'
+footer_four_size: '4'
+customize_css: "a.use-ajax.text-white.bg-purple1.rounded-lg.px-6.py-3\\.5.cursor-pointer {\r\n    background: #0ca652;\r\n\tpadding: 16px;\r\n}"
+course_search_action: courses
+google_api_key: ''

@@ -1,0 +1,13 @@
+gravitas_countdown:
+  version: VERSION
+  css:
+    theme:
+      css/gravitas-countdown.css: {}
+  js:
+    js/gravitas-countdown.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings

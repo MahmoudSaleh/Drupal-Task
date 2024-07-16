@@ -1,0 +1,29 @@
+uuid: 79a3ece5-444c-4aca-8f79-4e140d783730
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_research_topics
+    - node.type.research_topics
+    - taxonomy.vocabulary.research_topics
+id: node.research_topics.field_research_topics
+field_name: field_research_topics
+entity_type: node
+bundle: research_topics
+label: المحاور
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      research_topics: research_topics
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

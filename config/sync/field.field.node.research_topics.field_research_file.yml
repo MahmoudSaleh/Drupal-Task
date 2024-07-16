@@ -1,0 +1,27 @@
+uuid: 5d52580c-1aed-4071-9e6c-71282b917343
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_research_file
+    - node.type.research_topics
+  module:
+    - file
+id: node.research_topics.field_research_file
+field_name: field_research_file
+entity_type: node
+bundle: research_topics
+label: 'ملف البحث'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+field_type: file

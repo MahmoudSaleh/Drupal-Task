@@ -1,0 +1,3 @@
+# RewriteEngine On
+# RewriteCond %{HTTP_HOST}  !^www\.gmwconference\.com$ [NC]
+# RewriteRule ^(.*) https://www.gmwconference.com/$1 [L,R]

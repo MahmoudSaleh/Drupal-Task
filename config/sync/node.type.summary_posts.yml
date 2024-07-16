@@ -1,0 +1,17 @@
+uuid: 2e11c1d4-0f13-40d7-b9d2-801803ad39ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'تقديم مخلص المشاركات'
+type: summary_posts
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

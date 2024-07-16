@@ -1,0 +1,159 @@
+uuid: 3e0dbb61-76be-4099-a817-12fb8a79a3ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.summary_posts.body
+    - field.field.node.summary_posts.field_axis_topic
+    - field.field.node.summary_posts.field_city
+    - field.field.node.summary_posts.field_email
+    - field.field.node.summary_posts.field_research_file
+    - field.field.node.summary_posts.field_research_topics
+    - field.field.node.summary_posts.field_researcher_name
+    - field.field.node.summary_posts.field_tel
+    - field.field.node.summary_posts.field_type_of_participation
+    - node.type.summary_posts
+  module:
+    - conditional_fields
+    - file
+id: node.summary_posts.default
+targetEntityType: node
+bundle: summary_posts
+mode: default
+content:
+  field_axis_topic:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_city:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_email:
+    type: email_default
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_research_file:
+    type: file_generic
+    weight: 8
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings:
+      conditional_fields:
+        fc7b6432-8465-463d-8688-acee75c962eb:
+          entity_type: node
+          bundle: research_topics
+          dependee: field_agree
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: agree
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_research_topics:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        1268b9c4-2245-42ed-b0c2-b96625569f75:
+          entity_type: node
+          bundle: research_topics
+          dependee: field_agree
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: agree
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_researcher_name:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        841f20c7-00f6-46bd-a987-c65a9f832190:
+          entity_type: node
+          bundle: research_topics
+          dependee: field_agree
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: agree
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_tel:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_type_of_participation:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  gva_box_layout: true
+  gva_breadcrumb: true
+  gva_header: true
+  gva_node_class: true
+  gva_node_layout: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

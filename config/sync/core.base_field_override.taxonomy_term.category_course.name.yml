@@ -1,0 +1,18 @@
+uuid: cd586d6c-d4fa-4f89-8b79-636e5efaeb8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category_course
+id: taxonomy_term.category_course.name
+field_name: name
+entity_type: taxonomy_term
+bundle: category_course
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

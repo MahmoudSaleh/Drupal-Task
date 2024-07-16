@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ *
+ * Default template for faq block.
+ *
+ * Available variables:
+ * - content: Array of related details.
+ *   use {{ content.title }} and content.footer for the header and footer
+ * - data: json data of the clock config data
+ *
+ * @ingroup themeable
+ */
+ #}
+
+ {% if countdown_layout %}
+   {% set layout = 'layout-' ~ countdown_layout %}
+{% endif %}
+
+<div class="gravistas-container {{ layout }} {{ font_style }} {% if not banner_image %}no-banner{% endif %}" {% if banner_image %}style='background: linear-gradient(rgba(241, 241, 241, 0.15), rgba(14, 14, 14, 0.25)), url({{ banner_image }});
+background-position: center center;
+background-size: cover;'{% endif %}>
+<div class="countdown-parent">
+{% if title %}
+   <h2 class="countdown-title">{{ title }}</h2>
+{% endif %}
+{% if description %}
+   <div class="countdown-description">{{ description }}</div>
+{% endif %}
+<div class="{% if datetime != '' %}gravitas-countdown {% endif%}gravitas-countdown-wrapper" {% if datetime != '' %}data-date="{{ datetime }}"{% endif%}>
+<ul>
+<li class="days-container"><span class="days">0</span>Days</li>
+<li class="hours-container"><span class="hours">0</span>Hours</li>
+<li class="minutes-container"><span class="minutes">0</span>Minutes</li>
+<li class="seconds-container"><span class="seconds">0</span>Second</li>
+</ul>
+</div>
+</div>
+</div>

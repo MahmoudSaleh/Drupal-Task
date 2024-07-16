@@ -1,0 +1,20 @@
+uuid: 096d2131-d8d2-4dcc-92a1-7b986d78a860
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_axis_topic
+field_name: field_axis_topic
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

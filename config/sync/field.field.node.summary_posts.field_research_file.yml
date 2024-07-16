@@ -1,0 +1,27 @@
+uuid: c8ffd234-b972-4f54-818a-4ff05b236890
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_research_file
+    - node.type.summary_posts
+  module:
+    - file
+id: node.summary_posts.field_research_file
+field_name: field_research_file
+entity_type: node
+bundle: summary_posts
+label: 'تحميل ملخص المشاركة'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+field_type: file

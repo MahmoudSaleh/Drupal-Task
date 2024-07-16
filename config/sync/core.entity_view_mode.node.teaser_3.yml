@@ -1,0 +1,11 @@
+uuid: 01d3aa63-6a79-47d7-b31a-0ee44875a7f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_3
+label: 'Teaser 3'
+description: ''
+targetEntityType: node
+cache: true

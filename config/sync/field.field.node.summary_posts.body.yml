@@ -1,0 +1,24 @@
+uuid: 98b4e4c5-12ff-4be8-af28-58fb891bce5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.summary_posts
+  module:
+    - text
+id: node.summary_posts.body
+field_name: body
+entity_type: node
+bundle: summary_posts
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

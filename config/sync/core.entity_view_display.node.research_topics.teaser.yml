@@ -1,0 +1,73 @@
+uuid: ec6757c0-6826-4a06-bb9e-ed2285052971
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.research_topics.body
+    - field.field.node.research_topics.field_agree
+    - field.field.node.research_topics.field_research_file
+    - field.field.node.research_topics.field_research_image
+    - field.field.node.research_topics.field_research_topics
+    - field.field.node.research_topics.field_researcher_name
+    - field.field.node.research_topics.field_researcher_photo
+    - node.type.research_topics
+  module:
+    - file
+    - image
+    - user
+id: node.research_topics.teaser
+targetEntityType: node
+bundle: research_topics
+mode: teaser
+content:
+  field_research_file:
+    type: file_url_plain
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_research_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_research_topics:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_researcher_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_researcher_photo:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  field_agree: true
+  langcode: true
+  links: true

@@ -1,0 +1,101 @@
+uuid: 5880b42e-6132-4bf5-9e84-0155997885d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.summary_posts.body
+    - field.field.node.summary_posts.field_axis_topic
+    - field.field.node.summary_posts.field_city
+    - field.field.node.summary_posts.field_email
+    - field.field.node.summary_posts.field_research_file
+    - field.field.node.summary_posts.field_research_topics
+    - field.field.node.summary_posts.field_researcher_name
+    - field.field.node.summary_posts.field_tel
+    - field.field.node.summary_posts.field_type_of_participation
+    - node.type.summary_posts
+  module:
+    - file
+    - text
+    - user
+id: node.summary_posts.default
+targetEntityType: node
+bundle: summary_posts
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_axis_topic:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_city:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_research_file:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_research_topics:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_researcher_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_tel:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_type_of_participation:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

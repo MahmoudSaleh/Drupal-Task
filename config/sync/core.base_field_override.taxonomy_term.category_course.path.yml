@@ -1,0 +1,20 @@
+uuid: 43fe7b5f-e312-42ea-84d1-3105cb48f17b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.category_course
+  module:
+    - path
+id: taxonomy_term.category_course.path
+field_name: path
+entity_type: taxonomy_term
+bundle: category_course
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

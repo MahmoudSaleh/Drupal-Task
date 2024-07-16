@@ -1,0 +1,11 @@
+name: 'Gravitas Countdown'
+type: module
+description: 'Provides the countdown timers block to your Drupal website'
+package: Gravitas Countdown
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:block
+# Information added by Drupal.org packaging script on 2023-05-25
+version: '1.1.1'
+project: 'gravitas_countdown'
+datestamp: 1684995842

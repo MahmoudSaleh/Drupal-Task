@@ -1,0 +1,11 @@
+uuid: ed51bd7d-f105-41a7-878a-5a419c88b3b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.summary_posts
+id: node.summary_posts
+target_entity_type_id: node
+target_bundle: summary_posts
+default_langcode: site_default
+language_alterable: false

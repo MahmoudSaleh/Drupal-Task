@@ -1,0 +1,51 @@
+
+.webform-submission-form .form-item input, .webform-submission-form .form-item textarea, .webform-submission-form .form-item select {
+    width: 100%;
+    background: none;
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    padding-left: 15px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: #fff;
+    border-radius: 6px;
+}
+div[class*='form-item']:not(.js-form-type-radio):not(.js-form-type-checkbox) select {
+    width: 100%;
+    /* float: left; */
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    padding: 5px 10px;
+}
+div input {
+    width: 100%;
+    /* float: left; */
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    padding: 5px 10px;
+}
+
+.body-page input[type="text"], .body-page input, .body-page input[type="password"], .body-page input[type="email"], .body-page textarea, .body-page select, .gva-body-page input[type="text"], .gva-body-page input[type="tel"], .gva-body-page input[type="password"], .gva-body-page input[type="email"], .gva-body-page textarea, .gva-body-page select {
+    border: 1px solid #dee2e6;
+    padding: 5px 10px;
+}
+
+.body-page .js-form-type-vertical-tabs {
+    display: none;
+}
+.layout-region--node-secondary {
+    display: none;
+}
+
+a.use-ajax.text-white.bg-purple1.rounded-lg.px-6.py-3\.5.cursor-pointer {
+    background: #0ca652;
+    margin: 18px;
+}
+.site-branding-logo img {
+    max-height: 90px;
+}
+
+.views-exposed-form {
+    margin-bottom: 46px;
+}

@@ -1,0 +1,143 @@
+body {
+    direction: rtl;
+    text-align: right;
+  }
+  .header {
+    float: right;
+  }
+  .content {
+    text-align: right;
+  }
+
+  label {
+    text-align: right;
+    float: right;
+}
+
+
+
+/* css rtl */
+.site-branding-logo img {
+    max-height: 90px;
+}
+
+header.header-v1 .header-main {
+    height: 123px;
+}
+
+.views-exposed-form .form-item {
+    padding-left: 30px;
+}
+  .gsc-heading .sub-title , .gsc-heading .title ,  .gsc-heading .title-desc , .gsc-heading.align-left .title-desc{
+      text-align: right;
+      float: right;
+  }
+  
+  .gsc-heading .sub-title, .gsc-heading .title, .gsc-heading .title-desc {
+     clear: right;
+  }
+  .gsc-heading .sub-title{
+        padding-right: 45px;
+        padding-left:0;
+    }
+  
+  .gsc-heading.align-center  .sub-title , .gsc-heading.align-center  .title ,  .gsc-heading.align-center  .title-desc{
+      float: none;
+    text-align: center;
+    clear: none;
+  }
+
+  .gsc-heading .sub-title:after{
+    right: 0;
+    left:auto;
+}
+  
+ .gsc-heading.align-center  .sub-title:after{
+    right: 50%;
+    left: 50%;
+}
+ 
+.gavias-blockbuilder-content {
+    direction: rtl;
+}
+.slick-list {
+    direction: ltr;
+}
+
+
+.gsc-heading.align-left {
+    float: right;
+}
+
+.gsc-icon-box .highlight-icon , .gsc-icon-box  .title , .gsc-icon-box  .desc  {
+    text-align: right;
+}
+
+.text-left {
+    text-align: right !important;
+}
+
+.breadcrumb-content-inner .gva-breadcrumb-content .page-title{
+    text-align: right;
+}
+
+.breadcrumb-style {
+    background-color: #f8f8f8 !important;
+    background-image: none !important;
+
+    background-repeat: no-repeat !important;
+}
+
+
+.course-block .course-content .content-inner .title , .course-block .course-content .content-inner .categories{
+    text-align: right;
+}
+
+.course-block .course-content .content-inner .categories{
+        padding-right: 28px;
+}
+
+.course-block .course-content .content-inner .categories:after{
+    right: 0;
+    left:auto;
+}
+
+span.mobile-phone {
+    direction: ltr;
+    unicode-bidi: embed;
+}
+
+[class*="block-grid-"] > div{
+   float: right;
+}
+
+.gsc-icon-box.top-right-title .title-inner {
+    direction: ltr;
+}
+
+.topbar {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.owl-carousel .post-block {
+    direction: rtl;
+}
+
+.owl-carousel {
+    direction: ltr;
+}
+.gavias_sliderlayer {
+    direction: ltr;
+}
+
+
+
+#block-gavias-edupia-content .gva-view-grid {
+    padding: 10px 0;
+}

@@ -1,0 +1,108 @@
+:root {
+  --smaller: .75;
+}
+
+.gravistas-container {
+  color: #333;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 3rem;
+}
+
+.gravistas-container li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  color: #fff;
+  margin: 0.2rem 0;
+}
+
+.gravistas-container li span {
+  display: block;
+  font-size: 4.5rem;
+  margin: 1rem 0;
+}
+
+@media all and (max-width: 768px) {
+  .gravistas-container h2 {
+    font-size: calc(1.5rem * var(--smaller));
+  }
+
+  .gravistas-container li {
+    font-size: calc(1.125rem * var(--smaller));
+  }
+
+  .gravistas-container li span {
+    font-size: calc(3.375rem * var(--smaller));
+  }
+}
+
+.gravistas-container.layout-1 li {
+  background-color: rgba(38, 38, 38, 0.7);
+  border-radius: 9px;
+}
+
+.gravistas-container.layout-2 li {
+  background: rgba(255, 255, 255, 0.12);
+  border-top: 5px solid #ff0000;
+}
+
+.gravistas-container.layout-3 li {
+  border: 1px solid #fff;
+}
+
+.gravistas-container.layout-4 ul {
+  margin-left: 0;
+  border: 1px solid #fff;
+}
+
+.gravistas-container.layout-5 li {
+  background: linear-gradient( to top, #009edb 0%, #009edb 50%, rgba(127, 206, 236, 0.95) 50%, rgba(127, 206, 236, 0.95) 100% );
+}
+
+.gravistas-container.layout-6 li {
+  background-color: #02244a;
+}
+
+.gravistas-container.layout-7 li {
+  box-shadow: inset -3px -3px 7px #ffffff73, inset 3px 3px 7px;
+  border-radius: 15px;
+}
+
+.gravistas-container.layout-8 li {
+  background-image: linear-gradient(0deg, #000 0%, #444 100%);
+  color: #fff;
+  border-radius: 10px;
+}
+
+.gravistas-container.layout-9 li .days {
+  color: #db4844;
+}
+
+.gravistas-container.layout-9 li .hours {
+  color: #f07c22;
+}
+
+.gravistas-container.layout-9 li .minutes {
+  color: #f6da74;
+}
+
+.gravistas-container.layout-9 li .seconds {
+  color: #abcd58;
+}
+
+.gravistas-container.dark .countdown-title,
+.gravistas-container.dark .countdown-description,
+.gravistas-container.dark.no-banner .gravitas-countdown-wrapper li {
+  color: #000;
+}
+
+.gravistas-container.light .countdown-title,
+.gravistas-container.light .countdown-description,
+.gravistas-container.light.no-banner .gravitas-countdown-wrapper li {
+  color: #fff;
+}

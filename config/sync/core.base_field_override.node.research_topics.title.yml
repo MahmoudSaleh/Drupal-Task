@@ -1,0 +1,18 @@
+uuid: 952e3740-86ac-4337-a2e7-91e33ed8a2a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.research_topics
+id: node.research_topics.title
+field_name: title
+entity_type: node
+bundle: research_topics
+label: 'عنوان البحث'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

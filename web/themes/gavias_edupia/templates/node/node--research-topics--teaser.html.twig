@@ -1,0 +1,75 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+
+<div class="course-block">
+	<div class="course-block-inner">
+		<div class="image gallery-popup">
+			{{ content.field_research_image }}
+			{# {% if video_link %}
+						        <a class="video-link popup-video" href="{{ video_link }}"><i class="fas fa-video"></i> {{'Preview'|t}}</a>
+						      {% endif %} #}
+		</div>
+		<div class="course-content">
+			<div class="content-inner">
+				<div class="categories clearfix">{{content.field_research_topics}}</div>
+				<h4 class="title">
+					<a href="{{ url }}" rel="bookmark">{{ label }}</a>
+				</h4>
+				<div class="course-info">
+					{# {{ dump(content) }} #}
+					<div class="field field--name-field-course-teacher field--type-entity-reference field--label-hidden field__items">
+						<div class="field__item">
+							<div class="team-block team-teaser-3">
+								<div class="team-image">
+									<div
+										class="field field--name-field-team-image field--type-image field--label-hidden field__item">
+										{# <a href="/workspace/ccgforum/web/en/node/58" hreflang="en"> #}
+										{{content.field_researcher_photo}}
+										{# </a> #}
+									</div>
+								</div>
+								<div class="team-content">
+									<div
+										class="team-name">
+										{# <a href="/workspace/ccgforum/web/en/node/58"> #}
+										{{content.field_researcher_name}}
+										{# </a> #}
+									</div>
+									{# <div class="team-job">Marketing Director</div> #}
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+			<div class="course-footer clearfix">
+				<div class="left">
+					<div class="course-price">
+						<div class="course-price-inner">
+							{% if price_display %}
+								{{ price_display }}
+							{% else %}
+								{{ product.variation_price }}
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				<div class="right">
+					<a href="{{ content.field_research_file.0['#markup'] }}">{{ 'DownLoad'|t }}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

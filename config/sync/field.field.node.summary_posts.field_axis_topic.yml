@@ -1,0 +1,29 @@
+uuid: 65cad8a2-fdde-4527-84f8-5a25f8ef09f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_axis_topic
+    - node.type.summary_posts
+    - taxonomy.vocabulary.research_topics
+id: node.summary_posts.field_axis_topic
+field_name: field_axis_topic
+entity_type: node
+bundle: summary_posts
+label: 'موضوع المحور'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      research_topics: research_topics
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

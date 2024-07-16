@@ -1,0 +1,18 @@
+uuid: e21b6b61-938f-4d2d-85ef-61f95f28e2c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.summary_posts
+id: node.summary_posts.title
+field_name: title
+entity_type: node
+bundle: summary_posts
+label: 'عنوان البحث'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

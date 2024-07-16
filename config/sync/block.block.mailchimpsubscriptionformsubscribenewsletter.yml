@@ -1,0 +1,24 @@
+uuid: fbd35bd4-c8fc-49d2-baf3-df7bc6723b18
+langcode: en
+status: true
+dependencies:
+  module:
+    - gaviasthemer
+    - mailchimp_signup
+  theme:
+    - gavias_edupia
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: mailchimpsubscriptionformsubscribenewsletter
+theme: gavias_edupia
+region: footer_four
+weight: 0
+provider: null
+plugin: 'mailchimp_signup_subscribe_block:subscribe_newsletter'
+settings:
+  id: 'mailchimp_signup_subscribe_block:subscribe_newsletter'
+  label: 'Subscribe Newsletter'
+  label_display: visible
+  provider: mailchimp_signup
+visibility: {  }

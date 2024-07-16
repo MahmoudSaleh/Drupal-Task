@@ -1,0 +1,8 @@
+uuid: 0d33e4be-15df-4ca2-a918-c5233eb022f2
+langcode: ar
+status: true
+dependencies: {  }
+name: 'Research Topics'
+vid: research_topics
+description: ''
+weight: 0

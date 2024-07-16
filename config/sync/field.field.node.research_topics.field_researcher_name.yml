@@ -1,0 +1,19 @@
+uuid: 0545ad68-f059-4812-9de0-897ff04d62a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_researcher_name
+    - node.type.research_topics
+id: node.research_topics.field_researcher_name
+field_name: field_researcher_name
+entity_type: node
+bundle: research_topics
+label: 'اسم الباحث'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

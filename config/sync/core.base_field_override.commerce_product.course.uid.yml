@@ -1,0 +1,20 @@
+uuid: 401022d5-077f-41d4-b838-27a99b948a3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.course
+id: commerce_product.course.uid
+field_name: uid
+entity_type: commerce_product
+bundle: course
+label: Author
+description: 'The product author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\commerce_product\Entity\Product::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

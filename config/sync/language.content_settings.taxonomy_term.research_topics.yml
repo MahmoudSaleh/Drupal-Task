@@ -1,0 +1,16 @@
+uuid: a1a36c65-7896-4476-9a35-808f96865b98
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.research_topics
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.research_topics
+target_entity_type_id: taxonomy_term
+target_bundle: research_topics
+default_langcode: site_default
+language_alterable: true

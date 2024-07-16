@@ -1,0 +1,11 @@
+uuid: b0738e47-1639-4d0b-bed6-d5d5c90e90e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.research_topics
+id: node.research_topics
+target_entity_type_id: node
+target_bundle: research_topics
+default_langcode: ar
+language_alterable: false

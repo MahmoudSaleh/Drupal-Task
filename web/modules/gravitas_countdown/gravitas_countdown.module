@@ -1,0 +1,187 @@
+<?php
+
+/**
+ * @file
+ * Contains gravitas_countdown.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\file\Entity\File;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ *
+ * Provides definitions for drupal's help features.
+ */
+function gravitas_countdown_help($route_name, RouteMatchInterface $route_match) {
+	switch ($route_name) {
+		case 'help.page.gravitas_countdown':
+		$output = '<p>' . t('The Gravitas Countdown module is a powerful tool that allows you to easily add countdown timers to your Drupal website. Whether you want to create a sense of urgency for limited-time offers, promote upcoming events, or highlight important milestones, this module has got you covered.') . '</p>';
+		return $output;
+	}
+}
+
+/**
+* Implements hook_theme().
+*/
+
+function gravitas_countdown_theme($existing, $type, $theme, $path) {
+    return [
+    'gravitas_countdown' => [
+      'variables' => [
+        'title' => NULL,
+        'countdown_layout' => NULL,
+        'font_style' => NULL,
+        'datetime' => NULL,
+        'description' => NULL,
+        'banner_image' => NULL
+      ]
+    ]
+  ];
+}
+
+
+/**
+ * Get previous image ids of the countdown
+ * @param  [type] $countdown_data_config
+ * @return [type]
+ */
+function get_countdown_description_images($countdown_data_config)
+{
+  $image_ids = array();
+  if ($countdown_data_config != '') {
+    $all_config_data = json_decode($countdown_data_config);
+    foreach ($all_config_data as $key => $config_data) {
+      if (isset($config_data->description)) {
+        $old_image_ids = get_countdown_editor_files($config_data->description);
+
+        $image_ids = array_merge($image_ids, $old_image_ids);
+      }
+    }
+  }
+  return $image_ids;
+}
+
+/**
+ * form alter block_delete_form to delete the images used
+ * on the block
+ * @param  [type]             &$form
+ * @param  FormStateInterface $form_state
+ * @return [type]
+ */
+function gravitas_countdown_form_alter(&$form, FormStateInterface $form_state)
+{
+  if ($form['#form_id'] == 'block_delete_form') {
+
+    $block_entity = $form_state->getFormObject()->getEntity();
+
+    // get block entity
+    if ($block_entity) {
+
+      $block_plugin_id = $block_entity->getPluginId();
+
+      // check if the plugin id is gravitas_countdown
+      if ($block_plugin_id == 'gravitas_countdown') {
+
+        $settings = $block_entity->get('settings');
+
+        if (isset($settings['description'])) {
+          $description = $settings['description'];
+
+          $get_countdown_description_images = get_countdown_editor_files($description);
+
+          $form_state->set('after_ajax_call', json_encode($get_countdown_description_images));
+
+          if (!empty($get_countdown_description_images)) {
+
+            foreach (array_keys($form['actions']) as $action) {
+              if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+                $form['actions'][$action]['#submit'][] = 'gravitas_countdown_form_submit';
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * submit form callback to remove the images used
+ * on the countdown block
+ * @param  [type]             $form
+ * @param  FormStateInterface $form_state
+ * @return [type]
+ */
+function gravitas_countdown_form_submit($form, FormStateInterface $form_state)
+{
+  $after_ajax_call = $form_state->get('after_ajax_call');
+  if ($after_ajax_call != '') {
+    $result = json_decode($after_ajax_call);
+    if (!empty($result)) {
+      foreach ($result as $key => $author_image_id) {
+        $file = File::load($author_image_id);
+        $file->setTemporary();
+        $file->save();
+      }
+    }
+  }
+}
+
+/**
+ * @param $content
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ */
+function get_countdown_editor_files($content)
+{
+  $new_fids = [];
+  $uuids = _editor_parse_file_uuids($content);
+  foreach ($uuids as $uuid) {
+    if ($file = \Drupal::service('entity.repository')->loadEntityByUuid('file', $uuid)) {
+      $new_fids[] = $file->id();
+    }
+  }
+  return $new_fids;
+}
+
+/**
+* Implements theme_mymodule_thumb_upload theme callback.
+*/
+function theme_mymodule_thumb_upload($variables) {
+  $element = $variables['element'];
+  $output = '';
+  $output .= '<div class="image-widget form-managed-file clearfix">';
+
+  // My uploaded element didn't have a preview array item, so this didn't work
+  //if (isset($element['preview'])) {
+  //  $output .= '<div class="image-preview">';
+  //  $output .= drupal_render($element['preview']);
+  //  $output .= '</div>';
+  //}
+
+  // If image is uploaded show its thumbnail to the output HTML
+  if ($element['fid']['#value'] != 0) {
+    $output .= '<div class="image-preview">';
+
+    // Even though I was uploading to public:// the $element uri was pointing to temporary://system, so the path to the preview image was a 404
+    //$output .= theme('image_style', array('style_name' => 'thumbnail', 'path' => file_load($element['fid']['#value'])->uri, 'getsize' => FALSE));
+
+    $output .= theme('image_style', array('style_name' => 'thumbnail', 'path' => 'public://'.$element['#file']->filename, 'getsize' => FALSE));
+    $output .= '</div>';
+  }
+
+  $output .= '<div class="image-widget-data">';
+
+  if ($element['fid']['#value'] != 0) {
+    $element['filename']['#markup'] .= ' <span class="file-size">(' . format_size($element['#file']->filesize) . ')</span> ';
+  }
+
+  // The remove button is already taken care of by rendering the rest of the form. No need to hack up some HTML!
+  $output .= drupal_render_children($element);
+
+  $output .= '</div>';
+  $output .= '</div>';
+
+  return $output;
+}
